@@ -1,0 +1,33 @@
+# main.py
+# import the kivy module
+import kivy
+
+# It’s required that the base Class
+# of your App inherits from the App class.
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+# if not imported shows the error
+from kivy.uix.button import Button
+
+# This class stores the info of .kv file
+# when it is called goes to my.kv file
+
+class MainWidget(GridLayout):
+    pass
+
+
+# we are defining the Base Class of our Kivy App
+class myApp(App):
+    def build(self):
+        btn = Button(text='Hello World',
+                     size_hint=(.3, .3),
+                     background_color=(1.0, 0.0, 0.0, 1.0))
+
+        # return a MainWidget() as a root widget
+        return MainWidget()
+
+
+if __name__ == '__main__':
+    # Here the class MyApp is initialized
+    # and its run() method called.
+    myApp().run()
